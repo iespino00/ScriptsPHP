@@ -24,9 +24,12 @@
         <button type="sumbit" name="enviar" id="enviar" >Enviar¡¡ </button>
     </form>
 
-      <button type="submit" id="borrar" name="borrar">Borrar Cookie</button>
+    <form action="index.php" method="POST">
+    <button type="submit" id="borrar" name="borrar">Borrar Cookie</button>
+    </form>
+     
 
-      
+
  <?php
 //Estructura de la cookie: //nombre = valor ; expires = fecha; path = /; domain= dominio.com
 
@@ -36,6 +39,11 @@ if(isset($_POST['enviar']))
     setcookie('usuario',$usuario, time()+4800); //
 }
 
+if(isset($_POST['borrar']))
+{
+    setcookie('usuario','',time()-4800);
+ 
+}
 ?>
 
 
