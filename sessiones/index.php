@@ -9,7 +9,9 @@ $_SESSION['usuario']="";
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
+
+
+
     </head>
     <body>
     <center><form action="index.php" method="post">
@@ -23,6 +25,7 @@ $_SESSION['usuario']="";
     if(isset($_POST['session']))
     {
        $_SESSION['usuario'] = $_POST['nombre'];
+       $_SESSION["ultimoAcceso"]= date("Y-n-j H:i:s"); 
        header("Location:prueba.php");
     }
     ?>
